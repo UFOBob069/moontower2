@@ -41,19 +41,19 @@ export default function Home() {
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Mission</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  The MoonTower Business Podcast stands at the intersection of innovation and entrepreneurship, delivering unparalleled insights from the heart of Texas' most dynamic business ecosystem. Through in-depth conversations with industry titans, disruptive innovators, and thought leaders, we explore the cutting-edge developments shaping the future of business and technology.
+                  The MoonTower Business Podcast stands at the intersection of innovation and entrepreneurship, delivering unparalleled insights from the heart of Texas&apos; most dynamic business ecosystem. Through in-depth conversations with industry titans, disruptive innovators, and thought leaders, we explore the cutting-edge developments shaping the future of business and technology.
                 </p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Impact</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  With a rapidly growing audience across multiple platforms and listeners in over 50 countries, we've become a trusted voice in the business podcast landscape. Our episodes have featured Fortune 500 executives, successful entrepreneurs, and innovative startups, providing actionable insights and behind-the-scenes perspectives on building and scaling successful enterprises.
+                  With a rapidly growing audience across multiple platforms and listeners in over 50 countries, we&apos;ve become a trusted voice in the business podcast landscape. Our episodes have featured Fortune 500 executives, successful entrepreneurs, and innovative startups, providing actionable insights and behind-the-scenes perspectives on building and scaling successful enterprises.
                 </p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Host</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Joey O'Bell is a seasoned attorney, entrepreneur, and podcast host, specializing in corporate law, business strategy, and litigation. As the founder of Vineyard Sun and the host of Moontower Business Podcast, he brings a passion for business, innovation, and insightful conversations with industry leaders. With a strong legal background and a commitment to entrepreneurship, Joey continues to make an impact in law, business, and media.
+                  Joey O&apos;Bell is a seasoned attorney, entrepreneur, and podcast host, specializing in corporate law, business strategy, and litigation. As the founder of Vineyard Sun and the host of Moontower Business Podcast, he brings a passion for business, innovation, and insightful conversations with industry leaders. With a strong legal background and a commitment to entrepreneurship, Joey continues to make an impact in law, business, and media.
                 </p>
               </div>
               <div className="pt-8 flex justify-center">
@@ -76,7 +76,7 @@ export default function Home() {
                   src="/spacex.jpg" 
                 />
                 <p className="text-sm text-gray-500 mt-4 text-center max-w-md">
-                  Host Joseph O'Bell breaking ground on Starbase, Tx with Elon Musk
+                  Host Joseph O&apos;Bell breaking ground on Starbase, Tx with Elon Musk
                 </p>
               </div>
             </div>
@@ -177,7 +177,7 @@ export default function Home() {
                     <Image alt="Joseph O'Bell" width={160} height={160} className="object-cover" src="/joey.jpg" priority />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-[#FFD700] mb-2 group-hover:scale-105 transition-transform">Joseph O'Bell</h3>
+                <h3 className="text-2xl font-bold text-[#FFD700] mb-2 group-hover:scale-105 transition-transform">Joseph O&apos;Bell</h3>
                 <p className="text-gray-300 font-medium mb-4">Host & Executive Producer</p>
                 <p className="text-gray-400 text-center leading-relaxed mb-6">
                   An attorney and entrepreneur bringing unique perspectives on both legal and business aspects of entrepreneurship. General Counsel for American Metals Recovery and Recycling Inc. and Multiband Global.
@@ -347,8 +347,8 @@ export default function Home() {
                       <span className="text-lg text-gray-400 line-through">$49.00</span>
                       <span className="text-sm text-[#FFD700] font-medium">Sale</span>
                     </div>
-                    <p className="text-gray-300">Add a stylish and inspiring touch to your space with our "Positive Cash Flow" pillow.</p>
-                    <p className="text-gray-400 text-sm">Featuring the phrase "Happiness is Positive Cash Flow" embroidered in orange on a navy blue pillow, it's a great reminder of financial success and the value of a balanced life.</p>
+                <p className="text-gray-300">Add a stylish and inspiring touch to your space with our &quot;Positive Cash Flow&quot; pillow.</p>
+                <p className="text-gray-400 text-sm">Featuring the phrase &quot;Happiness is Positive Cash Flow&quot; embroidered in orange on a navy blue pillow, it&apos;s a great reminder of financial success and the value of a balanced life.</p>
                     <div className="inline-flex items-center text-[#FFD700] font-medium group-hover:translate-x-1 transition-transform">
                       View Details
                       <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
