@@ -292,7 +292,7 @@ export default function Home() {
             <Link target="_blank" rel="noopener noreferrer" href="https://bitcoin.org/bitcoin.pdf" className="group">
               <div className="bg-gray-800 p-8 rounded-lg transition-all duration-300 hover:bg-gray-800/80 hover:translate-y-[-4px]">
                 <h3 className="text-2xl font-semibold mb-4 text-[#FFD700] group-hover:text-[#FFE17D]">Bitcoin Initiatives</h3>
-                <p className="text-gray-300">Exploring the intersection of cryptocurrency and business in Austin's growing tech scene.</p>
+                <p className="text-gray-300">Exploring the intersection of cryptocurrency and business in Austin&apos;s growing tech scene.</p>
                 <div className="mt-4 inline-flex items-center text-[#FFD700] group-hover:translate-x-1 transition-transform">
                   Learn More
                   <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
