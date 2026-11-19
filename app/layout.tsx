@@ -1,25 +1,15 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Barlow_Condensed, Inter } from 'next/font/google'
 import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
-
+const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
+const display = Barlow_Condensed({ subsets: ['latin'], weight: ['700', '800'], variable: '--font-display', display: 'swap' })
 export const metadata: Metadata = {
-  title: 'MoonTower Business Podcast',
-  description: 'Exploring the Austin business landscape through engaging conversations with entrepreneurs, executives, and innovators.',
-  icons: {
-    icon: '/favicon.ico',
-  },
+  metadataBase: new URL('https://www.moontowerbusiness.com'),
+  title: 'Moontower Business Podcast | Austin Entrepreneurs & Business Leaders',
+  description: 'An Austin business podcast with entrepreneurs, executives, investors, and community leaders. Hosted by Joseph O’Bell. Conversations since 2020.',
+  openGraph: { siteName: 'Moontower Business Podcast', type: 'website', locale: 'en_US', images: [{ url: '/images/moontower-tomorrow-summit.png', alt: 'The Moontower Business team at TomorrowX Summit' }] },
+  twitter: { card: 'summary_large_image' },
 }
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  )
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en"><body className={inter.variable + ' ' + display.variable}>{children}</body></html>
 }

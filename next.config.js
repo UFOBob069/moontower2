@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  outputFileTracingRoot: __dirname,
   images: {
-    domains: ['open.spotify.com'],
+    unoptimized: true,
   },
 }
 
