@@ -11,7 +11,7 @@ Verified on November 19, 2026.
 
 ## Updating
 
-The homepage uses curated local content snapshots for predictable rendering. To update selected episodes, edit episodes.json and the matching editorial entry in lib/podcast-shared.ts. To update the latest episode, update latest-episode.json and the player text/date in app/page.tsx together. Recheck the Apple rating before publishing and update both the hero and footer if it changes.
+The selected conversations remain curated in episodes.json and lib/podcast-shared.ts. The homepage latest player and public `/api/latest-episode` endpoint refresh from the official RSS feed on demand, cached for one hour. A failed refresh preserves the last successful cached result; a cold-start failure uses the newest saved archive episode. New episodes link to their publisher page until the archive is synced, so an update never points at a missing local page. Titles, descriptions, dates, audio, and duration update together. No scheduled job or credentials are needed. Recheck the Apple rating before publishing and update both the hero and footer if it changes.
 
 Guest inquiries open the visitor's email client; the redesign does not use the legacy rental-related API routes. No messages are sent automatically.
 
@@ -21,7 +21,7 @@ The full feed snapshot in `archive.json` contains 193 entries as of November 19,
 
 Run `npm run sync:episodes` to fetch and validate the official RSS feed, then rebuild (`npm run build`) and deploy through the usual hosting workflow. This is an explicit refresh, not a scheduled or per-request fetch. The importer leaves the previous snapshot untouched if fetching or validation fails and preserves imported slugs by feed GUID when titles change. Review the data diff before publishing.
 
-Feed GUIDs identify entries. Episode numbers come from published titles because some iTunes number fields disagree; both distinct entries titled Episode 123 are retained. The trailer has no invented episode number. The homepage stays curated in `episodes.json`, `latest-episode.json`, and `podcast-shared.ts`; syncing the archive does not replace it.
+Feed GUIDs identify entries. Episode numbers come from published titles because some iTunes number fields disagree; both distinct entries titled Episode 123 are retained. The trailer has no invented episode number. The selected conversations stay curated; syncing the archive also refreshes the latest-player fallback. Eagan Ventures consumes the public latest-episode endpoint server-side.
 
 The archive uses server-rendered GET search across titles and original descriptions, with 12 entries per page. Query and page state are shareable URLs. Empty results offer a reset, invalid page numbers are clamped, and search result URLs are marked noindex/follow. Normal archive pages and every episode appear in the sitemap. Original notes render as escaped text with clickable HTTP(S) links; no transcripts or new interview claims are generated.
 

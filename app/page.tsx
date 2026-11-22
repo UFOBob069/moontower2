@@ -3,7 +3,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Headphones, Mic2, Play, Radio, Star } from 'lucide-react'
 import EpisodeExplorer from './components/EpisodeExplorer'
-import latest from '@/data/latest-episode.json'
+import { getLatestEpisode } from '@/lib/latest-episode'
+import { displayDate, episodeMinutes } from '@/lib/podcast-shared'
+
+export const revalidate = 3600
 
 const apple = 'https://podcasts.apple.com/us/podcast/moontower-business/id1507993317'
 const spotify = 'https://open.spotify.com/show/1ffGDEnDolncAj4xA753TA'
@@ -11,7 +14,8 @@ const contact = 'mailto:hello@moontowerbusiness.com?cc=david.eagan%40gmail.com%2
 
 export const metadata: Metadata = { alternates: { canonical: '/' } }
 
-export default function Home() {
+export default async function Home() {
+  const latest = await getLatestEpisode()
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="site-header"><div className="shell nav-inner">
@@ -43,7 +47,7 @@ export default function Home() {
       </section>
       <section id="listen" className="listen-section"><div className="shell listen-grid">
         <div><p className="eyebrow">The latest conversation</p><h2>PRESS PLAY.<br />GET INTO IT.</h2><div className="platform-links"><a href={spotify}>Spotify</a><a href={apple}>Apple Podcasts</a><a href="https://www.youtube.com/@moontowerbusinesspodcast9156">YouTube</a><a href="https://anchor.fm/s/140e55d8/podcast/rss">RSS</a></div></div>
-        <div className="latest-player"><div className="player-top"><Image src="/images/moontower-logo.jpg" alt="Moontower Business cover artwork" width={90} height={90} /><span className="eyebrow">EP. 191 &nbsp; / &nbsp; 25 MIN<br /><time dateTime="2026-09-15">September 15, 2026</time></span></div><h3>Joe Brayton</h3><p className="guest-role">Co-owner, Pickler Universe</p><p>Building a country club experience around pickleball, and the story behind Pickler Universe.</p><audio controls preload="none" aria-label="Listen to Episode 191 with Joe Brayton" src={latest.audio}>Your browser does not support audio playback.</audio><Link className="player-fallback" href="/episodes/191-joe-brayton-pickler-universe">Read the Joe Brayton episode notes</Link></div>
+        <div className="latest-player"><div className="player-top"><Image src="/images/moontower-logo.jpg" alt="Moontower Business cover artwork" width={90} height={90} /><span className="eyebrow">{latest.number ? `EP. ${latest.number}` : 'LATEST EPISODE'} &nbsp; / &nbsp; {episodeMinutes(latest.duration)} MIN<br /><time dateTime={latest.date}>{displayDate(latest.date)}</time></span></div><h3>{latest.name}</h3>{latest.role && <p className="guest-role">{latest.role}</p>}<p>{latest.description}</p><audio controls preload="none" aria-label={`Listen to ${latest.title}`} src={latest.audio}>Your browser does not support audio playback.</audio><a className="player-fallback" href={latest.notesUrl}>Explore this episode</a><a className="player-fallback" href={latest.url}>Listen on Spotify</a></div>
       </div></section>
       <section id="about" className="section shell about-section">
         <div className="section-heading"><div><p className="eyebrow">Independent voices. Shared curiosity.</p><h2>BUSINESS IS PERSONAL.<br />SO IS THIS PODCAST.</h2></div><p>Moontower Business is an Austin business podcast featuring conversations with entrepreneurs, executives, investors, and community leaders. Hosted by Joseph O&apos;Bell, sharing stories since 2020.</p></div>

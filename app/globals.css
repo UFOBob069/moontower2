@@ -109,3 +109,5 @@
 .groundbreaking-story h3 { font-family:var(--font-display); font-size:clamp(32px,3.8vw,52px); line-height:1; font-weight:700; letter-spacing:-.6px; }
 .groundbreaking-story figcaption>p:last-child { font-size:16px; line-height:1.7; color:#d5d8d0; max-width:340px; }
 @media(max-width:760px) { .groundbreaking-story { grid-template-columns:1fr; margin-top:40px; }.groundbreaking-story figcaption { padding:28px; gap:18px; }.groundbreaking-story h3 { font-size:40px; } }
+
+.latest-player .player-fallback { display: block; width: fit-content; }
